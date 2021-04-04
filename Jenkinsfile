@@ -6,7 +6,7 @@
       env.PATH = "${tfHome}:${env.PATH}"
       env.PATH = "${env.PATH}:/usr/local/bin"
       
-      stage("First Stage"){
+      stage("Install Packer"){
           sh 'whoami'
           sh 'pwd'
           sh 'curl -o packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip && unzip -o packer.zip'
@@ -14,8 +14,8 @@
       }
       
       if (var1=="shoaib"){
-          stage("Shoaib Stage"){
-              sh "sed 's/region/eu-central-1/g' file"
+          stage("Check Version"){
+              sh "./packer --version"
           }
       }
       
