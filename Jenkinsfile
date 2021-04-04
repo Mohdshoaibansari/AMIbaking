@@ -10,9 +10,7 @@
           sh 'whoami'
           sh 'pwd'
           sh 'curl -o packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip && unzip packer.zip'
-          sh 'touch file'
-          sh "echo 'this is file region'> file"
-          sh 'cat file'
+          sh 'ls -lrt'
       }
       
       if (var1=="shoaib"){
