@@ -9,7 +9,7 @@
       stage("First Stage"){
           sh 'whoami'
           sh 'pwd'
-          sh 'curl -o packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip && unzip packer.zip'
+          sh 'curl -o packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip && unzip -o packer.zip'
           sh 'ls -lrt'
       }
       
