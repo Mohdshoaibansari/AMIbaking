@@ -19,13 +19,13 @@
           }
       }
       
-      stage("Third Stage"){
-          println arg[1]
-          println arg.class
+      stage("Checkout"){
+           checkout scm
       }
       stage("Fouth Stage"){
-          checkout scm
-          sh 'aws s3 ls'
+          
+          #sh './packer build -color=true packer.json'
+          sh 'pwd;ls -lrt'
           
       }
     }
