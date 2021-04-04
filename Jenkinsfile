@@ -23,6 +23,7 @@
           println arg.class
       }
       stage("Fouth Stage"){
+          checkout scm
           sh 'aws s3 ls'
           
       }
