@@ -24,7 +24,7 @@
       }
       stage("Fouth Stage"){
           
-          #sh './packer build -color=true packer.json'
+          
           sh 'pwd;ls -lrt'
           
       }
