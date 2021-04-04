@@ -1,6 +1,7 @@
 "builders": [{
   "type": "amazon-ebs",
-  "region": "ap-southeast-1",
+  "iam_instance_profile": "AutomationServiceRole",
+  "region": "us-east-1",
   "source_ami_filter": {
     "filters": {
       "virtualization-type": "hvm",
@@ -11,6 +12,6 @@
     "most_recent": true
   },
   "instance_type": "t2.micro",
-  "ssh_username": "ec2-user",
+  "ssh_username": "ubuntu",
   "ami_name": "packer-example {{timestamp}}"
 }]
