@@ -8,6 +8,7 @@
       
       stage("First Stage"){
           sh 'whoami'
+          sh 'pwd'
           sh 'touch file'
           sh "echo 'this is file region'> file"
           sh 'cat file'
