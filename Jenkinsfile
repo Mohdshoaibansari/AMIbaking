@@ -7,7 +7,7 @@
       env.PATH = "${env.PATH}:/usr/local/bin"
       
       stage("First Stage"){
-          sh 'sudo su'
+          sh 'whoami'
           sh 'touch file'
           sh "echo 'this is file region'> file"
           sh 'cat file'
