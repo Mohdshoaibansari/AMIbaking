@@ -26,7 +26,7 @@
         "most_recent": true
       },
       "instance_type": "{{user `aws_instance_type`}}",
-      "ssh_username": "ubuntu",
+      "ssh_username": "ec2-user",
       "ami_name": "{{user `build_name`}}-{{timestamp}}"
     }
   ]
