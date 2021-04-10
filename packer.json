@@ -1,15 +1,33 @@
-{"builders": [
-  {
-    "type": "amazon-ebs",
-    "source_ami_filter": {
-       "filters": {
-       "virtualization-type": "hvm",
-       "name": "EKS-Ops",
-       "root-device-type": "ebs"
-       },
-       "owners": ["070814490905"],
-       "most_recent": true
+{
+  "variables": {
+    "build_name": "mysql",
+    "aws_instance_type": "t2.micro"
+    "aws_region": "ap-southeast-1",
+  },
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": ["./mysql.sh"],
+      "pause_before": "4s"
     }
-  }
-]
+  ],
+  "builders": [
+    {
+      "name": "aws",
+      "type": "amazon-ebs",
+      "region": "{{user `aws_region`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "EKS-Ops",
+          "root-device-type": "ebs"
+        },
+        "owners": ["070814490905"],
+        "most_recent": true
+      },
+      "instance_type": "{{user `aws_instance_type`}}",
+      "ssh_username": "ubuntu",
+      "ami_name": "{{user `build_name`}}-{{timestamp}}"
+    }
+  ]
 }
